@@ -1,0 +1,145 @@
+<!doctype html>
+<html>
+    <head>
+        <title></title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+<body>
+
+  <div class="regform">
+            <h1>Self Reporting Form</h1>
+        </div>
+        <div class="main">
+            <form onSubmit="window.location.reload()">
+			   <!--<h2 class="name">Capture Image</h2>-->
+					
+				<!--	<input class="img" id="img1" type="file" accept="image/*;capture=camera" oninput="dd()" required>
+					<img width="200" height="200"/>  -->
+
+                   <!-- <div id="camera"></div><BR><BR>
+                        <button id="capture" onclick="capture_img()">Capture Image</button>
+                        <button id="reset" onclick="reset()">Reset Image</button>-->
+
+
+
+
+                
+                <div id="name">
+                    <h2 class="name">Name :</h2>
+                    <input class="firstname" id="first_nm" type="text" name="first_name" placeholder="First Name" required>
+                    <!--<label class="firstlabel">first name</label>-->
+                    <input class="lastname" id="last_nm" type="text" name="last_name" placeholder="Last Name" required><br>
+                    <!--<label class="lastlabel">last name</label>-->
+                </div>
+                <h2 class="name">Mobile Number :</h2>
+                <input class="code" id="area_co" type="tel" name="code" placeholder="Area code" required>
+                <!--<label class="area-code">Area Code</label>-->
+                <input class="mob_no" id="mob" type="tel" name="mob_no" placeholder="Mobile Number" pattern="[0-9]{10}" onblur="check_doc()" required><br>
+                <!--<label class="mobile-number">mobile number</label>-->
+                <h2 class="name">Email :</h2>
+                <input class="email" id="email" type="text" name="email" placeholder="Email" required><br>
+
+                <h2 class="name">Address :</h2>
+                <input class="address" id="address" type="text" name="address" placeholder="House no. , street/village" required><br>
+
+                <h2 class="name">City :</h2>
+                <input class="city " id="city_nm" type="text" name="city" placeholder="city" required><br>
+
+                <h2 class="name">State :</h2>
+                <input class="state" id="state_nm" type="text" name="state" placeholder="state" required><br>
+
+                <h2 class="name">Whom to meet:</h2>
+                <select class="option" id="person_list" name="meet" required>
+                    <option disabled="disabled" selected="selected">--Choose Option--</option>
+                    <option>Mr. Subhash Tatle</option>
+                    <option>Mr. Atul Kulkarni</option>
+                </select>
+				
+				
+				<h2 class="name">Purpose Of Visit: <INPUT class="purpose" id="purposeMeet" type="text" name="purpose_of_meet" placeholder="Purpose of visit (in short)"></h2>
+                <h2 class="name">Any symptoms -</h2>
+
+                <h3 id="fever">Fever :</h3>
+                <label class="radio">
+                    <input class="radio-one" type="radio" value="Yes" name="fever">
+                    <span class="checkmark"></span>
+                    Yes
+                </label>
+                <label class="radio">
+                    <input class="radio-two" type="radio" value="No" name="fever">
+                    <span class="checkmark"></span>
+                    No
+                </label>
+                
+
+                <h3 id="fever">Cough :</h3>
+                <label class="radio">
+                    <input class="radio-one" type="radio" value="Yes" name="cough">
+                    <span class="checkmark"></span>
+                    Yes
+                </label>
+                <label class="radio">
+                    <input class="radio-two" type="radio" value="No" name="cough">
+                    <span class="checkmark"></span>
+                    No
+                </label>
+                
+
+                <h3 id="fever">Breathing difficulty :</h3>
+                <label class="radio">
+                    <input class="radio-one" type="radio" value="Yes" name="radio3">
+                    <span class="checkmark"></span>
+                    Yes
+                </label>
+                <label class="radio">
+                    <input class="radio-two" type="radio" value="No" name="radio3">
+                    <span class="checkmark"></span>
+                    No
+                </label>
+
+                <h3 id="fever">Respiratory disease :</h3>
+                <label class="radio">
+                    <input class="radio-one" type="radio" value="Yes" name="radio4">
+                    <span class="checkmark"></span>
+                    Yes
+                </label>
+                <label class="radio">
+                    <input class="radio-two" type="radio" value="No" name="radio4">
+                    <span class="checkmark"></span>
+                    No
+                </label><BR><BR>
+				
+				<h3 class="name">Time Of Meet : </h3><INPUT id="txt_tm" type="time" required><BR><BR>
+				<h3 class="name">Date Of Meet : </h3><INPUT id="txt_dt" type="date" required><BR><BR>
+                
+                <button type="submit" id="btn_sub" onclick="insert_data()">Submit</button>
+
+            </form>
+        </div>
+         <!--Firebase Libraries-->
+    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-storage.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/webcamjs/1.0.26/webcam.min.js"></script>
+    <script src="script.js">
+    </script>
+
+</body>
+
+<!--<script>
+	function dd()
+	{
+	var Element = document.querySelector('input');
+	var img = document.querySelector('img');
+	Element.addEventListener('change', function() {
+	var url = URL.createObjectURL(Element.files[0]);
+	img.src = url;
+	console.log(url);
+	var d=document.querySelector(".p");
+	d.textContent+=url;
+	});
+	}
+</script>-->
+
+</html>
